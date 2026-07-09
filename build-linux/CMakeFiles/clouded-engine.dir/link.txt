@@ -1,0 +1,1 @@
+/usr/bin/c++ -g "CMakeFiles/clouded-engine.dir/src/main.cpp.o" -o bin/clouded-engine   -L/home/f4shn/Dev/Projects/clouded/vendor/SDL3/lib/linux  -Wl,-rpath,/home/f4shn/Dev/Projects/clouded/vendor/SDL3/lib/linux: lib/libengine.a -lSDL3 

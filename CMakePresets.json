@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "Mac",
+      "cacheVariables": { "PLATFORM": "Mac" }
+    },
+    {
+      "name": "Linux",
+      "cacheVariables": { "PLATFORM": "Linux" }
+    },
+    {
+      "name": "Windows",
+      "cacheVariables": { "PLATFORM": "Windows" }
+    },
+    {
+      "name": "3ds",
+      "toolchainFile": "$env{DEVKITPRO}/cmake/3DS.cmake",
+      "cacheVariables": { "PLATFORM": "N3DS" }
+    },
+    {
+      "name": "Vita",
+      "toolchainFile": "$env{VITASDK}/share/vitasdk/cmake/VitaSDK.cmake",
+      "cacheVariables": { "PLATFORM": "PSVita" }
+    }
+  ]
+}

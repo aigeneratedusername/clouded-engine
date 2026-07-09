@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/engine.dir/src/engine/engine.cpp.o"
+  "CMakeFiles/engine.dir/src/engine/engine.cpp.o.d"
+  "CMakeFiles/engine.dir/src/engine/gfx/gfx.cpp.o"
+  "CMakeFiles/engine.dir/src/engine/gfx/gfx.cpp.o.d"
+  "CMakeFiles/engine.dir/src/engine/util.cpp.o"
+  "CMakeFiles/engine.dir/src/engine/util.cpp.o.d"
+  "CMakeFiles/engine.dir/src/platform/internal/internal.c.o"
+  "CMakeFiles/engine.dir/src/platform/internal/internal.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/internal/memory.c.o"
+  "CMakeFiles/engine.dir/src/platform/internal/memory.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/platform.c.o"
+  "CMakeFiles/engine.dir/src/platform/platform.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/sdl/audio/audio.c.o"
+  "CMakeFiles/engine.dir/src/platform/sdl/audio/audio.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/sdl/display/screen.c.o"
+  "CMakeFiles/engine.dir/src/platform/sdl/display/screen.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/sdl/io/io.c.o"
+  "CMakeFiles/engine.dir/src/platform/sdl/io/io.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/sdl/memory/memory.c.o"
+  "CMakeFiles/engine.dir/src/platform/sdl/memory/memory.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/sdl/system/system.c.o"
+  "CMakeFiles/engine.dir/src/platform/sdl/system/system.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/types.c.o"
+  "CMakeFiles/engine.dir/src/platform/types.c.o.d"
+  "CMakeFiles/engine.dir/src/platform/util.c.o"
+  "CMakeFiles/engine.dir/src/platform/util.c.o.d"
+  "CMakeFiles/engine.dir/vendor/glad/src/glad.c.o"
+  "CMakeFiles/engine.dir/vendor/glad/src/glad.c.o.d"
+  "CMakeFiles/engine.dir/vendor/stb/stb.c.o"
+  "CMakeFiles/engine.dir/vendor/stb/stb.c.o.d"
+  "CMakeFiles/engine.dir/vendor/tomlc17/tomlc17.c.o"
+  "CMakeFiles/engine.dir/vendor/tomlc17/tomlc17.c.o.d"
+  "lib/libengine.a"
+  "lib/libengine.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C CXX)
+  include(CMakeFiles/engine.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
