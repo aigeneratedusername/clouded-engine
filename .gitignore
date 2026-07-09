@@ -1,0 +1,10 @@
+build-windows.bat
+build-linux.sh
+build-3ds.sh
+build-vita.sh
+build-linux
+build-windows
+build-mac
+build-3ds
+build-vita
+.clangd
