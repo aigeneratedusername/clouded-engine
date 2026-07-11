@@ -3,7 +3,7 @@
 
 #include <variant>
 
-template <typename T, pu32 E>
+template <typename T, typename E>
 class Result {
 public:
 	Result(const T& value) : data(value){}
@@ -12,7 +12,7 @@ public:
 	bool 	is_ok()  const { return std::holds_alternative<T>(data); }
 	bool 	is_err() const { return !is_ok(); }
 	T& 		unwrap() { return std::get<T>(data); }
-	pu32 	error()  { return std::get<pu32>(data); }
+	pu32 	error()  { return std::get<E>(data); }
 private:
-	std::variant<T, pu32> data;
+	std::variant<T, E> data;
 };

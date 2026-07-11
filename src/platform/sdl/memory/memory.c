@@ -22,8 +22,6 @@ PResult pmemory_init(const PMemoryConfig memconf) {
 		goto out; 
 	});
 
-	printf("%zu\n", pialloc_used());
-
 	memlayout.regions = PRESULT_PTR(PMemoryRegion, res);
 	memlayout.nregions = nentries;
 
