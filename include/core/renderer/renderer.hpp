@@ -7,7 +7,7 @@ enum class RendererError {
 };
 
 struct Renderer {
-	void *backend_ctx;
+	RenderBackend *backend;
 };
 
 Result<Renderer*, RendererError> renderer_init();

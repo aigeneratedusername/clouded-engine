@@ -50,17 +50,18 @@ set(PLATFORM_SOURCES_COMMON
     src/core/platform/platform.c
     src/core/platform/internal/internal.c
     src/core/platform/internal/memory.c
+    src/core/platform/memory/memory.c
     src/core/platform/types.c
     src/core/platform/util.c
 )
 
 if(PLATFORM_DESKTOP STREQUAL "TRUE")
     set(PLATFORM_SOURCES
-        src/core/platform/sdl/audio/audio.c
-        src/core/platform/sdl/io/io.c
-        src/core/platform/sdl/memory/memory.c
-        src/core/platform/sdl/system/system.c
-        src/core/platform/sdl/video/screen.c
+        src/core/platform/audio/sdl_audio.c
+        src/core/platform/io/sdl_io.c
+        src/core/platform/memory/sdl_memory.c
+        src/core/platform/system/sdl_system.c
+        src/core/platform/video/sdl_screen.c
     )
 elseif(PLATFORM STREQUAL "N3DS")
     set(PLATFORM_SOURCES

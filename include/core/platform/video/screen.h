@@ -10,6 +10,8 @@ extern "C" {
 PResult pscreen_init();
 PResult pscreen_deinit();
 
+PHandle pscreen_get();
+
 #ifdef __cplusplus
 }
 #endif

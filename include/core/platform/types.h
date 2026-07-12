@@ -21,6 +21,8 @@ typedef int64_t 	pi64;
 typedef float 		pf32;
 typedef double 		pf64;
 
+typedef void* PHandle;
+
 typedef struct {
 	const pu8 	*ptr;
 	size_t 		len;
