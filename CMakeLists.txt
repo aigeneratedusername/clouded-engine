@@ -47,36 +47,36 @@ add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>)
 
 # Platform
 set(PLATFORM_SOURCES_COMMON
-    src/platform/platform.c
-    src/platform/internal/internal.c
-    src/platform/internal/memory.c
-    src/platform/types.c
-    src/platform/util.c
+    src/core/platform/platform.c
+    src/core/platform/internal/internal.c
+    src/core/platform/internal/memory.c
+    src/core/platform/types.c
+    src/core/platform/util.c
 )
 
 if(PLATFORM_DESKTOP STREQUAL "TRUE")
     set(PLATFORM_SOURCES
-        src/platform/sdl/audio/audio.c
-        src/platform/sdl/display/screen.c
-        src/platform/sdl/io/io.c
-        src/platform/sdl/memory/memory.c
-        src/platform/sdl/system/system.c
+        src/core/platform/sdl/audio/audio.c
+        src/core/platform/sdl/io/io.c
+        src/core/platform/sdl/memory/memory.c
+        src/core/platform/sdl/system/system.c
+        src/core/platform/sdl/video/screen.c
     )
 elseif(PLATFORM STREQUAL "N3DS")
     set(PLATFORM_SOURCES
-        src/platform/3ds/audio/audio.c
-        src/platform/3ds/display/screen.c
-        src/platform/3ds/io/io.c
-        src/platform/3ds/memory/memory.c
-        src/platform/3ds/system/system.c
+        src/core/platform/3ds/audio/audio.c
+        src/core/platform/3ds/io/io.c
+        src/core/platform/3ds/memory/memory.c
+        src/core/platform/3ds/system/system.c
+        src/core/platform/3ds/video/screen.c
     )
 elseif(PLATFORM STREQUAL "PSVita")
     set(PLATFORM_SOURCES
-        src/platform/vita/audio/audio.c
-        src/platform/vita/display/screen.c
-        src/platform/vita/io/io.c
-        src/platform/vita/memory/memory.c
-        src/platform/vita/system/system.c
+        src/core/platform/vita/audio/audio.c
+        src/core/platform/vita/io/io.c
+        src/core/platform/vita/memory/memory.c
+        src/core/platform/vita/system/system.c
+        src/core/platform/vita/video/screen.c
     )
 endif()
 
@@ -96,19 +96,18 @@ endif()
 #Engine Renderer Backend
 if(PLATFORM_DESKTOP STREQUAL "TRUE")
     set(ENGINE_RENDERBACK_SOURCE
-        src/engine/backends/desktop-opengl.cpp
+        src/core/renderer/backends/desktop-opengl.cpp
     )
 elseif(PLATFORM STREQUAL "N3DS")
     set(ENGINE_RENDERBACK_SOURCE
-        src/engine/backends/3ds-citro3d.cpp
+        src/core/renderer/backends/3ds-citro3d.cpp
     )
 endif()
 
 # Engine
 set(ENGINE_SOURCES
-    src/engine/engine.cpp
-    src/engine/util.cpp
-    src/engine/gfx/gfx.cpp
+    src/engine.cpp
+    src/core/util.cpp
 )
 
 set_source_files_properties(
