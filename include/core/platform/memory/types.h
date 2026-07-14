@@ -9,17 +9,17 @@ extern "C" {
  * @brief Function pointer to an allocator alloc function
  * @see PAllocator
  */
-typedef void *(*pallocFn)(size_t size);
+typedef void *(*pallocFn)(void *ctx, size_t size, size_t alignment);
 /** 
  * @brief Function pointer to an allocator realloc function 
  * @see PAllocator
  */
-typedef void *(*preallocFn)(void *ptr, size_t size);
+typedef void *(*preallocFn)(void *ctx, void *ptr, size_t size, size_t alignment);
 /** 
  * @brief Function pointer to an allocator free function 
  * @see PAllocator
  */
-typedef void  (*pfreeFn)(void *ptr);
+typedef void  (*pfreeFn)(void *ctx, void *ptr);
 
 /**
  * @brief Capabilities of an allocator
