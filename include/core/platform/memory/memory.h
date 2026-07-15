@@ -6,8 +6,8 @@
 extern "C" {
 #endif
 
-PResult 	*palloc(PAllocator *allocator, size_t nbytes, size_t align, PAllocatorCapabilities requires);
-PResult 	*prealloc(PAllocator *allocator, size_t nbytes, size_t align, PAllocatorCapabilities requires);
+PResult 	palloc(PAllocator *allocator, size_t nbytes, size_t align, PAllocatorCapabilities requires);
+PResult 	prealloc(PAllocator *allocator, void *ptr, size_t nbytes, size_t align, PAllocatorCapabilities requires);
 PResult  	pfree(PAllocator *allocator, void *mem, PAllocatorCapabilities requires);
 
 PResult 	pmemory_init(const PMemoryConfig memconf);

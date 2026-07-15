@@ -2,19 +2,19 @@
 
 PAllocatorCapabilities MemArenaCapabilities = {};
 
-PResult memarena_init(const pu8 *membuffer, size_t size) {
-	PResult res = {};
+EResult memarena_init(const pu8 *membuffer, size_t size) {
+	EResult res = {};
 	MemArena *memarena = nullptr;
 
 	if(size < sizeof(MemArena)) {
-		res	 = PErr(PERROR_OUT_OF_MEMORY);
+		res	= EErr(EERROR_DOMAIN_MEMORY, EERROR_OUT_OF_MEMORY);
 	}
 
 	return res;
 }
 
-PResult memarena_deinit(MemArena **memarena) {
-	return POk_int(0);
+EResult memarena_deinit(MemArena **memarena) {
+	return EOk_int(0);
 }
 
 void *memarena_alloc(void *memarena, size_t nbytes, size_t alignment) {
@@ -25,9 +25,9 @@ void *memarena_alloc(void *memarena, size_t nbytes, size_t alignment) {
 	return NULL;
 }
 
-PResult memarena_reset(MemArena &memarena) {
+EResult memarena_reset(MemArena &memarena) {
 	memarena.offset = 0;
-	return POk_int(0);
+	return EOk_int(0);
 }
 
 PAllocator memarena_make_pallocator(MemArena &memarena) {

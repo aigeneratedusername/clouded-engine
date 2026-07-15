@@ -1,12 +1,31 @@
 #pragma once
-#include "types.hpp"
+#include "platform/types.h"
 
 enum EStatus {
 	ESTATUS_OK,
 	ESTATUS_ERROR
 };
 
-typedef uint16_t EErrorDomain;
+/*
+ * NOTE: This isn't a perfect solution however, I've yet to find better
+ * My biggest gripe is that a central enum for domains or a domain registry system
+ * is needed. Along with that, each error domain is required to carry it's own
+ * erorr codes which isn't always handled cleanly.
+ */
+enum EErrorDomain : uint16_t {
+	EERROR_DOMAIN_MEMORY = 0,
+	EERROR_DOMAIN_RENDERER,
+	EERROR_DOMAIN_CONTAINERS,
+	EERORR_DOMAIN_PLATFORM,
+	EERROR_DOMAIN_UNAVAILABLE
+};
+
+enum EErrorCommonCode : uint16_t {
+	EERROR_OUT_OF_MEMORY,
+	EERROR_INVALID_PARAMS,
+	EERORR_UNKNOWN
+};
+
 typedef uint16_t EErrorCode;
 typedef uint32_t EError;
 
@@ -24,8 +43,8 @@ struct EResult {
 
 /*
  *  NOTE: DO NOT USE THIS WITH NON EResult RETURN TYPES!
- * for PResults use PRESULT_TRY, for function that return neither? 
- * idk go fuck yourself? 
+ *  for PResults use PRESULT_TRY, for function that return neither? 
+ *  idk go fuck yourself? 
  */
 #define ERESULT_TRY(expr, res, ...)		\
 	do { 								\
