@@ -22,9 +22,11 @@ struct EResult {
 #define ERESULT_UINT(res) 	((uintptr_t)(res).data)
 #define ERESULT_INT(res) 	((intptr_t)(res).data)
 
-// NOTE: DO NOT USE THIS WITH NON EResult TYPES!
-// for PResults use PRESULT_TRY, for function that return neither? 
-// idk go fuck yourself?
+/*
+ *  NOTE: DO NOT USE THIS WITH NON EResult RETURN TYPES!
+ * for PResults use PRESULT_TRY, for function that return neither? 
+ * idk go fuck yourself? 
+ */
 #define ERESULT_TRY(expr, res, ...)		\
 	do { 								\
 		(res) = (expr); 				\
