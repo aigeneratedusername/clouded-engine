@@ -109,6 +109,8 @@ endif()
 set(ENGINE_SOURCES
     src/engine.cpp
     src/core/util.cpp
+    src/core/memory/arena.cpp
+    src/runtime/runtime.cpp
 )
 
 set_source_files_properties(

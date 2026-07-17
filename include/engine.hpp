@@ -1,6 +1,8 @@
 #pragma once
+#include "core/memory/memory.hpp"
 #include "core/platform/platform.h"
 #include "core/renderer/renderer.hpp"
+#include "core/result.hpp"
 #include "core/types.hpp"
 #include "core/util.hpp"
 

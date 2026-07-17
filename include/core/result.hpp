@@ -37,9 +37,9 @@ struct EResult {
 	};
 };
 
-#define ERESULT_PTR(T, res) ((T*)(res).data)
-#define ERESULT_UINT(res) 	((uintptr_t)(res).data)
-#define ERESULT_INT(res) 	((intptr_t)(res).data)
+#define ERESULT_PTR(T, res) ((T*)(res).value)
+#define ERESULT_UINT(res) 	((uintptr_t)(res).value)
+#define ERESULT_INT(res) 	((intptr_t)(res).value)
 
 /*
  *  NOTE: DO NOT USE THIS WITH NON EResult RETURN TYPES!
