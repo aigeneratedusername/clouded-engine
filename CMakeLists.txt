@@ -110,6 +110,7 @@ set(ENGINE_SOURCES
     src/engine.cpp
     src/core/util.cpp
     src/core/memory/arena.cpp
+    src/core/memory/memory.cpp
     src/runtime/runtime.cpp
 )
 

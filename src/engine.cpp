@@ -1,24 +1,26 @@
 #include "engine.hpp"
 
 // singletons
-//
-static pu8 mem[PMB(1)];
 static Renderer *renderer = nullptr;
+
+// memory partitions
+PSlice renderer_mem;
+PSlice runtime_mem; 
 
 PResult eentry_point(pi32 argc, const char **argv, const PMemoryLayout *memlayout, PStringView gbinary_path) {
 	PResult res = {};
 	EResult eres{};
-	PUNUSED(argc);
-	PUNUSED(argv);
+	
+	// TODO: label memory region array indexes
+	runtime_mem = { memlayout->regions[0].memory + PMB(8), PMB(8) };
+	renderer_mem = { memlayout->regions[1].memory + PMB(8), PMB(8) };
 
-	MemArena *arena = nullptr;
-	int *ia = nullptr;
-	ERESULT_TRY(memarena_init(mem, PMB(1)), eres, printf("I FAILED!!!\n"));
-	arena = ERESULT_PTR(MemArena, eres);
-	printf("%p\n", arena);
+	ERESULT_TRY(runtime_init(runtime_mem), eres, {
+		printf("Runtime initialization failed\n");
+		goto out;
+	});
 
-	ia = (int*) memarena_alloc(arena, sizeof(int) * 5, alignof(int));
-	printf("%p\n", ia);
+	ERESULT_TRY(runtime_mainloop(), eres, goto out);
 
 	res = POk_int(0);
 out:

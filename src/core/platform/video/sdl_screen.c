@@ -14,6 +14,7 @@ PResult pscreen_init() {
 
 	window_handle = SDL_CreateWindow("clouded engine!", window_width, window_height, window_flags);
 	if(!window_handle) {
+		printf("error\n");
 		res = PErr(PERROR_SCREEN_INIT_FAIL);
 		goto out;
 	}

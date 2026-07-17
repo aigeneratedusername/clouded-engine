@@ -5,5 +5,6 @@
 #include "core/result.hpp"
 #include "core/types.hpp"
 #include "core/util.hpp"
+#include "runtime/runtime.hpp"
 
 PResult eentry_point(pi32 argc, const char **argv, const PMemoryLayout *memlayout, PStringView gbin_path);
