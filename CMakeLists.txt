@@ -97,11 +97,11 @@ endif()
 #Engine Renderer Backend
 if(PLATFORM_DESKTOP STREQUAL "TRUE")
     set(ENGINE_RENDERBACK_SOURCE
-        src/core/renderer/backends/desktop-opengl.cpp
+        src/core/renderer/desktop-opengl/renderer.cpp
     )
 elseif(PLATFORM STREQUAL "N3DS")
     set(ENGINE_RENDERBACK_SOURCE
-        src/core/renderer/backends/3ds-citro3d.cpp
+        src/core/renderer/3ds-citro3d/renderer.cpp
     )
 endif()
 

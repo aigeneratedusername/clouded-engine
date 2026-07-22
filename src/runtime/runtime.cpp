@@ -45,6 +45,8 @@ EResult runtime_mainloop() {
 		}
 
 		renderer_clear();
+		renderer_begin();
+		renderer_end();
 
 		SDL_GL_SwapWindow((SDL_Window*) pscreen_get());
 	}
