@@ -1,5 +1,6 @@
 #include "runtime/runtime.hpp"
 #include "core/memory/memory.hpp"
+#include "core/renderer/renderer.hpp"
 
 #include "core/platform/video/screen.h"
 #include "SDL3/SDL.h"
@@ -11,8 +12,6 @@ static MemArena *frame_arena = nullptr;
 
 static bool is_running = false;
 
-SDL_Renderer *renderer = nullptr;
-
 EResult runtime_init(PSlice memory) {
 	EResult res = {};
 	MemCursor memc = memory;
@@ -23,12 +22,6 @@ EResult runtime_init(PSlice memory) {
 	scene_arena = ERESULT_PTR(MemArena, res);
 	ERESULT_TRY(memarena_init(memtake_front(&memc, PMB(1)).ptr, PMB(1)), res, goto out);
 	frame_arena = ERESULT_PTR(MemArena, res);
-
-	renderer = SDL_CreateRenderer((SDL_Window*)pscreen_get(), nullptr);
-	if(!renderer) {
-		printf("%s", SDL_GetError());
-		res = EErr(EERROR_DOMAIN_RENDERER, 0);
-	}
 
 	is_running = true;
 	res = EOk_int(0);
@@ -51,9 +44,9 @@ EResult runtime_mainloop() {
 				is_running = false;
 		}
 
-		SDL_SetRenderDrawColor(renderer, 0xff, 0xff, 0xff, 0xff);
-		SDL_RenderClear(renderer);
-		SDL_RenderPresent(renderer);
+		renderer_clear();
+
+		SDL_GL_SwapWindow((SDL_Window*) pscreen_get());
 	}
 
 	return res;

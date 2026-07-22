@@ -112,6 +112,7 @@ set(ENGINE_SOURCES
     src/core/memory/arena.cpp
     src/core/memory/memory.cpp
     src/runtime/runtime.cpp
+    ${ENGINE_RENDERBACK_SOURCE}
 )
 
 set_source_files_properties(

@@ -11,7 +11,7 @@ EResult memarena_init(const pu8 *membuffer, size_t size) {
 		goto out;
 	}
 
-	memarena = (MemArena*)membuffer;
+	memarena = (MemArena*) membuffer;
 	memarena->capacity = size - sizeof(MemArena);
 	memarena->offset = 0;
 	res = EOk_ptr(memarena);

@@ -42,8 +42,8 @@ struct EResult {
 #define ERESULT_INT(res) 	((intptr_t)(res).value)
 
 /*
- *  NOTE: DO NOT USE THIS WITH NON EResult RETURN TYPES!
- *  for PResults use PRESULT_TRY, for function that return neither? 
+ *  NOTE: DO NOT USE THIS WITH NON 'EResult' RETURN TYPES!
+ *  for 'PResult' return types use PRESULT_TRY, for function that return neither?
  *  idk go fuck yourself? 
  */
 #define ERESULT_TRY(expr, res, ...)		\

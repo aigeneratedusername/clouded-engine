@@ -15,6 +15,10 @@ PResult eentry_point(pi32 argc, const char **argv, const PMemoryLayout *memlayou
 	runtime_mem = { memlayout->regions[0].memory + PMB(8), PMB(8) };
 	renderer_mem = { memlayout->regions[1].memory + PMB(8), PMB(8) };
 
+	ERESULT_TRY(renderer_init(renderer_mem), eres, goto out);
+	renderer = ERESULT_PTR(Renderer, eres);
+	//renderer_set_ptr(renderer);
+
 	ERESULT_TRY(runtime_init(runtime_mem), eres, {
 		printf("Runtime initialization failed\n");
 		goto out;

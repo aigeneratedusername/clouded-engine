@@ -10,6 +10,7 @@ extern "C" {
 PResult pscreen_init();
 PResult pscreen_deinit();
 
+PResult pscreen_get_size(pu32 *width, pu32 *height);
 PHandle pscreen_get();
 
 #ifdef __cplusplus
